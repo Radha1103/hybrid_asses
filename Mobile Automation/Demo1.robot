@@ -1,6 +1,5 @@
 *** Settings ***
-Documentation     Two test cases one for creating account and second for swap and select the story ,one skip
-                 ...  is to be selected manually as xpath is not proper(captcha).
+Documentation     Two test cases one for creating account and second for swap and select the story..
 Library   AppiumLibrary
 *** Test Cases ***
 For Creating Account
