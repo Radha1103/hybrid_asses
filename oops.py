@@ -27,7 +27,15 @@ class ShoppingCart:
         self.driver.find_element(By.PARTIAL_LINK_TEXT, "Samsung SyncMaster 941BW").click()
         self.driver.find_element(By.ID, "input-quantity").send_keys("2")
         self.driver.find_element(By.ID, "button-cart").click()
-
+    def register(self):
+        self.driver.get("https://www.opencart.com/")
+        self.driver.find_element(By.XPATH, "(//*[text()='Register'])[2]").click()
+        self.driver.find_element(By.ID, "input-username").send_keys("RK")
+        self.driver.find_element(By.ID, "input-firstname").send_keys("Radhika")
+        self.driver.find_element(By.ID, "input-lastname").send_keys("Kavishwar")
+        self.driver.find_element(By.ID, "input-email").send_keys("abc@gmail.com")
+        self.driver.find_element(By.NAME, "password").send_keys("abc123")
+        self.driver.find_element(By.XPATH, "//button[text()='Register']")
 
 class AddToCart(ShoppingCart,Cart):
 
@@ -51,12 +59,15 @@ opencart = AddToCart()
 while True:
     print("Enter 1 for add to cart function")
     print("Enter 2 for exception function")
-    print("Enter 3 for exit ")
+    print("Enter 3 for register function")
+    print("Enter 4 for exit ")
     userchoice=int(input())
     if userchoice==1:
         opencart.add_to_cart()
     elif userchoice==2:
         opencart.add_to_cart_1()
     elif userchoice==3:
+        opencart.register()
+    elif userchoice==4:
         quit()
 
